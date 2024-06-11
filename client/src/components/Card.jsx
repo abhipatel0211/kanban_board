@@ -6,7 +6,7 @@ const Card = ({ item, day, month, time, data, setActiveCard, listid }) => {
     // console.log(id);
     await axios
       .delete(
-        `http://localhost:5000/api/v1/insideoptions/delete-insideoption/${id}/${listid}`
+        `https://kanban-board-server-sandy.vercel.app/api/v1/insideoptions/delete-insideoption/${id}/${listid}`
       )
       .then((res) => {
         // console.log(res.data);

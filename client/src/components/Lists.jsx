@@ -18,13 +18,16 @@ const Lists = ({
     // console.log("add card", _id, (name = "hii"), ucolor, length);
 
     await axios
-      .post(`http://localhost:5000/api/v1/insideoptions/create-insideoption`, {
-        insideoption: _id,
-        name,
-        order: data.length + 1,
-        tag,
-        color,
-      })
+      .post(
+        `https://kanban-board-server-sandy.vercel.app/api/v1/insideoptions/create-insideoption`,
+        {
+          insideoption: _id,
+          name,
+          order: data.length + 1,
+          tag,
+          color,
+        }
+      )
       .then((res) => {
         // console.log(res.data.message);
         allcards();
@@ -35,7 +38,7 @@ const Lists = ({
   const allcards = async (item) => {
     await axios
       .get(
-        `http://localhost:5000/api/v1/options/option/${
+        `https://kanban-board-server-sandy.vercel.app/api/v1/options/option/${
           item !== undefined ? item : _id
         }`
       )
@@ -66,7 +69,9 @@ const Lists = ({
   };
   async function delete_category(id) {
     await axios
-      .delete(`http://localhost:5000/api/v1/options/option/${_id}`)
+      .delete(
+        `https://kanban-board-server-sandy.vercel.app/api/v1/options/option/${_id}`
+      )
       .then((res) => {
         // console.log(res.data);
         getAllOption();

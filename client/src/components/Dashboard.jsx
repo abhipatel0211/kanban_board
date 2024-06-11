@@ -21,7 +21,7 @@ const Dashboard = () => {
   const getAllOption = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/v1/options/option"
+        "https://kanban-board-server-sandy.vercel.app/api/v1/options/option"
       );
       setOption(data?.category);
       // console.log(data.category);
@@ -40,7 +40,7 @@ const Dashboard = () => {
   const postOption = async (name = name) => {
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/v1/options/option",
+        "https://kanban-board-server-sandy.vercel.app/api/v1/options/option",
         { name }
       );
       // console.log(data);
@@ -60,7 +60,7 @@ const Dashboard = () => {
     // "fromPosition":${activeCard.order},
     // "toPosition":${index}`);
     await axios
-      .put("http://localhost:5000/api/reorder", {
+      .put("https://kanban-board-server-sandy.vercel.app/api/reorder", {
         fromListId: activeCard.insideoption,
         toListId: status,
         fromPosition: activeCard.order,

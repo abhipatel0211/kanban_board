@@ -16,7 +16,9 @@ const Login_Register = () => {
     try {
       // alert("complete");
       console.log("start try");
-      console.log(`hello http://localhost:5000/api/${url}`);
+      console.log(
+        `hello https://kanban-board-server-sandy.vercel.app/api/${url}`
+      );
       // var xhr = new XMLHttpRequest();
       // xhr.withCredentials = true;
 
@@ -24,7 +26,7 @@ const Login_Register = () => {
 
       if (url === "register") {
         await axios
-          .post(`http://localhost:5000/api/${url}`, {
+          .post(`https://kanban-board-server-sandy.vercel.app/api/${url}`, {
             name,
             email,
             password,
@@ -56,7 +58,10 @@ const Login_Register = () => {
           });
       } else if (url === "login") {
         await axios
-          .post(`http://localhost:5000/api/${url}`, { email, password })
+          .post(`https://kanban-board-server-sandy.vercel.app/api/${url}`, {
+            email,
+            password,
+          })
           .then((res) => {
             //After Register
             // console.log(res.headers);
